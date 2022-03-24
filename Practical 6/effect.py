@@ -7,7 +7,7 @@ print(parental_age)  # question 1
 print(chd)  # question 1
 plt.scatter(parental_age, chd, marker='o')  # question 2
 plt.show()  # question 2
-n = 40
+n = int(input())
 i = 0
 while i < 9:
     m = parental_age[i]
