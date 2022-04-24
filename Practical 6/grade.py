@@ -3,9 +3,9 @@ import numpy as np
 
 marks = [45, 36, 86, 57, 53, 92, 65, 45]
 
-print(marks)  # question 1
-
-plt.boxplot(marks,)  # question2
+print(sorted(marks))  # question 1
+plt.boxplot(marks)  # question2
+plt.title("Marks")
 plt.show()  # question2
 
 i = 0
