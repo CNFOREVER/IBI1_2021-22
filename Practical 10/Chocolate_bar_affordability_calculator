@@ -1,0 +1,15 @@
+def chocolate_number(total,unitprice):
+    chocolate_number=int(total/unitprice)
+    return chocolate_number
+total_money=float(input("total_money:"))
+chocolate_unit_price=float(input("chocolate_unit_price:"))
+num=chocolate_number(total_money,chocolate_unit_price)
+print("chocolate number:",num)
+"""
+    Example:
+        input part:
+            total_money:10
+            chocolate_unit_price:2
+        output part:
+            chocolate number:5
+"""
