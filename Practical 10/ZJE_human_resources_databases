@@ -1,0 +1,22 @@
+class Staff():
+    def __init__(self,a,b,c,d):
+        self.first_name = a
+        self.last_name = b
+        self.location = c
+        self.role = d
+
+    def printinfo(self):
+        print("name:",self.first_name,self.last_name,"location:",self.location,"role:",self.role)
+
+staff = Staff(input("first_name:"),input("last_name:"),input("location:"),input("role:"))
+staff.printinfo()
+"""
+    Example:
+        input part:
+            first_name:Shuping
+            last_name:Zhang
+            location:International campus
+             role:faculty
+        output part:
+            name: Shuping Zhang location: International campus role: faculty
+"""
