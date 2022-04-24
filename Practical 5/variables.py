@@ -15,6 +15,14 @@ if f < g:
     print("rate of new cases in 2020 is greater")
 
 
-X = input() == "True"
-Y = input() == "False"
-W = X and Y #The value will be false
+X = 0
+Y = 1
+bool(X)
+bool(Y)
+print("X:",bool(X))
+print("Y:",bool(Y))
+
+
+
+Z = bool(X) and bool(Y)
+print("X and Y:",Z)
