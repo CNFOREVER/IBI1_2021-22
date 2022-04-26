@@ -1,4 +1,6 @@
 How have new cases and total cases developed over time in Spain?
-The answer begins at line 40
-They developed more quickly in later days than in beginning days.
-The new cases become more and more in a higher speed in the late days
+The answer begins at line 47 and ends at line 60
+In Spain
+New cases and Total cases developed more quickly in later days than in beginning days.
+The new cases became more and more in a higher speed in the late days
+so that the total cases increased more quickly in later days
