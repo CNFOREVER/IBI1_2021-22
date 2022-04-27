@@ -1,6 +1,8 @@
-There are high similarities between the human sample and the mouse sample,about 96.55%
-There are low similarities between the mouse sample and the random sample,about 3.31%
-There are low similarities between the random sample and the human sample,about 3.34%
+There are high similarities between the human sample and the mouse sample,about 96.54%
+There are low similarities between the mouse sample and the random sample,about 3.11%
+There are low similarities between the random sample and the human sample,about 2.77%
+And we can know from the BLOSUM score that the score between human and mouse is 1497
+However, the score between the mouse and the random is -351
+the score between the random is -354
 The similarities and differences can be used to confirm that the origin life of creature is same
 And the human and the mouse has gene connection according to the gene similarity.
-
