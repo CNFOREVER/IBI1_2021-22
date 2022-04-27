@@ -10,7 +10,7 @@ print(covid_data.iloc[0, 1])
 print(covid_data.iloc[2, 0:5])
 print(covid_data.iloc[0:2, :])
 print(covid_data.iloc[0:10:2, 0:5])
-print(covid_data.iloc[10:20,0:3:2])#this is the question unsovled
+print(covid_data.iloc[10:21,0:3:2])
 print(covid_data.iloc[0:3, [0, 1, 3]])
 my_columns = [True, True, False, True, False, False]
 print(covid_data.iloc[0:3, my_columns])
