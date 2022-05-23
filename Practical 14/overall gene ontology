@@ -1,0 +1,67 @@
+from xml.dom.minidom import parse
+import xml.dom.minidom
+import matplotlib.pyplot as plt
+
+def node_sum(id):
+    global term_childNode_nore, temp
+    for j in range(len(all_is_a)):
+        for k in range(len(all_is_a[j])):
+            if all_is_a[j][k] == id:
+                storage[temp].append(all_id[j])
+                if not boolean[j]:
+                    node_sum(all_id[j])
+                storage[temp] = storage[temp] + storage[j]
+    boolean[all_id.index(id)] = True
+
+DOMTree = xml.dom.minidom.parse("go_obo.xml")
+collection = DOMTree.documentElement
+terms = collection.getElementsByTagName("term")
+print("There are", len(terms), "terms in go_obo.xml")
+#count the total number of the terms - task 1
+
+all_id = []
+all_is_a = []
+storage = []
+boolean = []
+for i in range(len(terms)):
+    storage.append([])
+    boolean.append(False)  #initialize the list all the false,and turn the term into ture one by one
+for i in range(len(terms)):
+    is_a = terms[i].getElementsByTagName("is_a")
+    all_id.append(terms[i].getElementsByTagName("id")[0].childNodes[0].data)
+    all_is_a.append([])
+    for j in range(len(is_a)):
+        all_is_a[i].append(terms[i].getElementsByTagName("is_a")[j].childNodes[0].data)
+
+all_term_childNode = []#without repetition
+translation = []
+temp = 0
+for i in range(len(all_id)):
+    temp = i
+    term_childNode_nore = []
+    node_sum(all_id[i])
+    for l in storage[i]:
+        if l not in term_childNode_nore:
+            term_childNode_nore.append(l)
+
+    print(i, len(term_childNode_nore))
+    all_term_childNode.append(len(term_childNode_nore))
+    if terms[i].getElementsByTagName("defstr")[0].childNodes[0].data.find("translation") != -1:
+        translation.append(len(term_childNode_nore))
+
+plt.boxplot(all_term_childNode)
+plt.title('Distribution of child node number of all GO terms')
+plt.xlabel("all GO terms")
+plt.ylabel("Number")
+plt.show()
+plt.boxplot(translation)
+plt.title('Distribution of child node number of terms associated with ‘translation’')
+plt.xlabel("associated with ‘translation’")
+plt.ylabel("Number")
+plt.show()
+print("There are", len(terms), "terms in go_obo.xml")
+print("The boxplot of child node distribution are showing.")
+
+"""
+Translation terms contain a small number of child nodes than the overall GO.
+"""
